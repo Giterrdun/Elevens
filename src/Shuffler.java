@@ -98,9 +98,33 @@ public class Shuffler {
 	public static void selectionShuffle(int[] values) {
 		  for( int k = values.length - 1; k >= 0; k-- ) {
 	            int j = (int)(Math.random() * k);
-	            int tmp = values[j];
+	            int hold = values[j];
 	            values[j] = values[k];
-	            values[k] = tmp;
+	            values[k] = hold;
 	        }
 	    }
+	
+	public static String flip(){
+		String result;
+		int r = (int)(Math.random() * 3);
+		if (r == 0 || r == 2){
+			result = "heads";
+		}else{
+			result = "tails";
+		}
+		return result;
+	}
+	
+	public static boolean arePermutations(int[] a, int[]b){
+		boolean result = false;
+		for(int i = 0; i < a.length; i++){
+			if(a[i] == b[i]){
+				result = false;
+			}else{
+				result = true;
+			}
+			
+		}
+		return result;
+	}
 }
